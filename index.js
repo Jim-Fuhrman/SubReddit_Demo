@@ -16,9 +16,9 @@ app.get("/r/:subreddit", (req, res) => {
   const { subreddit } = req.params
   const data = redditData[subreddit]
   if (data) {
-    res.render("subreddit", { ...data })
+    res.render("subreddit", { ...data, redditData })
   } else {
-    res.render("notfound", { subreddit })
+    res.render("notfound", { subreddit, redditData })
   }
 })
 
