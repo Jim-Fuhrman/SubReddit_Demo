@@ -2,7 +2,12 @@
   <%- include('partials/navbar') %>
   <div class="container">
     <h1>Subreddit Demo Home Page</h1>
-    <p>Here's all the reddit data I am passing to my home.ejs file.</p>
-    <%= Object.keys(redditData) %>
+    <p>My reddit data consists of these categories in the dropdown menu.</p>
+    <% 
+    let keySub = 0;
+    for (const key of Object.keys(redditData)) {
+    keySub++ %>
+      <p><%= keySub%>. &nbsp; <%= key %></p>
+    <% } %> 
   </div>
 <%- include('partials/footer') %> 
